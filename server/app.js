@@ -49,6 +49,7 @@ app.get("/", () => {
 
 database.connect();
 
-app.listen(4000, () => {
-    console.log("Server started listening on port 4000");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server started listening on port ${PORT}`);
 });
