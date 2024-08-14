@@ -16,15 +16,10 @@ const { errorMiddleware } = require("./middlewares/errorMiddleware");
 
 cloudinaryConnect();
 
-const corsOptions = {
-    origin: [process.env.FRONTEND_URL1 , process.env.FRONTEND_URL2], // Update this to your frontend's URL
-    credentials: true,
-    optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
-
+app.use(cors());
 app.use(cookieParser());
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -50,6 +45,12 @@ app.get("/", () => {
 database.connect();
 
 const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server is running on http://0.0.0.0:${PORT}`);
-  });
+	console.log(`App is running at ${PORT}`);
+}).on('error', (err) => {
+	console.error('Failed to start server:', err);
+});
+
+
+
