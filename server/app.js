@@ -11,7 +11,7 @@ const messageRouter = require("./router/messageRouter");
 const userRouter = require("./router/userRouter");
 const appointentRouter = require("./router/appointmentRouter");
 const { errorMiddleware } = require("./middlewares/errorMiddleware");
-
+const PORT = process.env.PORT
 
 
 cloudinaryConnect();
@@ -49,6 +49,6 @@ app.get("/", () => {
 
 database.connect();
 
-app.listen(process.env.PORT || 3000 , '0.0.0.0',  () => {
+app.listen(PORT || 3000 , '0.0.0.0',  () => {
     console.log("Server started listening on port 4000");
 });
