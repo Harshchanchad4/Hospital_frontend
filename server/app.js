@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000
 cloudinaryConnect();
 
 const corsOptions = {
-    origin: ["https://hospital-frontend-gamma.vercel.app" , "http://localhost:5173"], // Update this to your frontend's URL
+    origin: [process.env.FRONTEND_URL1 , process.env.FRONTEND_URL2 , process.env.FRONTEND_URL3], // Update this to your frontend's URL
     credentials: true,
     optionsSuccessStatus: 200,
 };
@@ -49,6 +49,6 @@ app.get("/", () => {
 
 database.connect();
 
-app.listen(PORT , '0.0.0.0',  () => {
+app.listen(PORT, () => {
     console.log("Server started listening on port 4000");
 });
