@@ -17,10 +17,11 @@ const PORT = process.env.PORT
 cloudinaryConnect();
 
 const corsOptions = {
-    origin: ["hospital-frontend-gamma.vercel.app"], // Update this to your frontend's URL
+    origin: ['https://hospital-frontend-gamma.vercel.app'],
     credentials: true,
     optionsSuccessStatus: 200,
 };
+
 
 app.use(cors(corsOptions));
 
