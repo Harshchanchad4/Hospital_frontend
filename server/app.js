@@ -11,7 +11,7 @@ const messageRouter = require("./router/messageRouter");
 const userRouter = require("./router/userRouter");
 const appointentRouter = require("./router/appointmentRouter");
 const { errorMiddleware } = require("./middlewares/errorMiddleware");
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 
 cloudinaryConnect();
